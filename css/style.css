@@ -12,6 +12,8 @@
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, .3);
+  --shadow-light: 0 2rem 5rem rgba(0,0,0,.06);
+  --box-shadow-light-grey: 1px solid var(--color-grey-light-2);
 }
 
 /* Global reset */
@@ -52,7 +54,7 @@ body {
   font-size: 1.4rem;
   height: 7rem;
   background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--box-shadow-light-grey);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -73,7 +75,27 @@ body {
 .hotel-view {
   background-color: var(--color-white);
   flex: 1;
-  height: 80rem;
+}
+
+.detail {
+  display: flex;
+  padding: 4.5rem;
+  background-color: var(--color-grey-light-1);
+  border-bottom: var(--box-shadow-light-grey);
+}
+
+.description {
+  font-size: 1.4rem;
+  background-color: var(--color-white);
+  flex: 0 0 60%;
+  margin-right: 4.5rem;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+}
+
+.user-reviews {
+  flex: 1;
+  box-shadow: var(--shadow-light);
 }
 
 .logo {
@@ -263,7 +285,7 @@ body {
 .overview {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--color-grey-light-2);
+  border-bottom: var(--box-shadow-light-grey);
 }
 
 .overview__heading {
@@ -351,4 +373,66 @@ body {
     transform: scale(1);
     box-shadow: none;
   }
+}
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.list {
+  list-style: none;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  border-top: var(--box-shadow-light-grey);
+  border-bottom: var(--box-shadow-light-grey);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.list__item {
+  flex: 0 0 50%;
+  margin-bottom: .7rem;
+}
+
+.list__item::before {
+  content: "";
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  margin-right: .7rem;
+  background-image: url(../img/chevron-thin-right.svg);
+  background-size: cover;
+}
+
+@supports (-webkit-mask-image: url(../img/chevron-thin-right.svg)) and (-webkit-mask-size: cover) {
+  .list__item::before {
+    background-color: var(--color-primary);
+    -webkit-mask-image: url(../img/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+    mask-image: url(../img/chevron-thin-right.svg);
+    mask-size: cover;
+  }
+}
+
+.recommend {
+  font-size: 1.3rem;
+  color: var(--color-grey-dark-3);
+  display: flex;
+  align-items: center;
+}
+
+.recommend__count {
+  margin-right: auto;
+}
+
+.recommend__photo {
+  box-sizing: content-box;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  border: 3px solid var(--color-white);
+}
+
+.recommend__photo:not(:last-child) {
+  margin-right: -2rem;
 }
