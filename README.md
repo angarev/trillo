@@ -1,1 +1,1 @@
-Website created with sass. Design by Jonas Schmedtmann. [ Demo link](https://angarev.github.io/trillo/)
+Website created with sass and flex box. Design by Jonas Schmedtmann. [ Demo link](https://angarev.github.io/trillo/)
